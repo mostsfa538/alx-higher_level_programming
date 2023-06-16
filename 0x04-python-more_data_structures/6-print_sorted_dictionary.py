@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 def print_sorted_dictionary(a_dictionary):
-    list_ord = list(a_dictionary.keys())
-    list_ord.sort()
-    for i in list_ord:
-        print("{}: {}".format(i, a_dictionary.get(i)))
-
+    dic = a_dictionary.copy()
+    keys = list(dic.keys())
+    keys.sort()
+    sdic = {i: dic[i] for i in keys}
+    for key, value in sdic.items():
+        print(f"{key}: {value}")
