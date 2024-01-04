@@ -8,6 +8,6 @@ if __name__ == "__main__":
         i = 1
         calc = 0
         while i <= size:
-            calc += sys.argv[i]
+            calc += int(sys.argv[i])
             i += 1
         print(calc)
