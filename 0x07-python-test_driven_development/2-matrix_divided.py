@@ -18,7 +18,7 @@ def matrix_divided(matrix, div):
         new_row = []
         for element in row:
             if type(element) is not int:
-                raise TypeError('div must be a number')
+                raise TypeError('matrix must be a matrix (list of lists) of integers/floats')
 
             new_row.append(round(element / div, 2))
         new_matrix.append(new_row)
