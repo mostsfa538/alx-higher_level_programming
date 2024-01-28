@@ -20,7 +20,7 @@ def matrix_divided(matrix, div):
             if type(element) is not int:
                 raise TypeError('div must be a number')
 
-            new_row.append(element / div)
+            new_row.append(round(element / div, 2))
         new_matrix.append(new_row)
 
     return new_matrix
