@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Matrix"""
 def matrix_divided(matrix, div):
     """matrix division"""
 
