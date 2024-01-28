@@ -1,0 +1,43 @@
+add integer
+    """ function """
+
+    >>> add_integer(2, 3)
+    5
+
+    >>> add_integer(-1, -5)
+    -6
+
+    >>> add_integer(0.2, 4)
+    4
+
+    >>> add_integer(3.3, 4.4)
+    7
+
+    >>> add_integer("Hello", 5)
+    Traceback (most recent call last):
+    TypeError: a must be an add
+
+    >>> add_integer("Hello", "World!")
+    Traceback (most recent call last):
+    TypeError: a must be an add
+
+    >>> add_integer(4, "Well")
+    Traceback (most recent call last):
+    TypeError: b must be an add
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+    >>> add_integer(1000e1000)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
