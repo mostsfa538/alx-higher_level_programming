@@ -99,9 +99,9 @@ class Rectangle:
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """who is bigger"""
-        if rect_1 is not Rectangle:
+        if not isinstance(rect_1, Rectangle):
             raise TypeError('rect_1 must be an instance of Rectangle')
-        if rect_2 is not Rectangle:
+        if not isinstance(rect_2, Rectangle):
             raise TypeError('rect_2 must be an instance of Rectangle')
 
         if rect_1.area() >= rect_2.area():
