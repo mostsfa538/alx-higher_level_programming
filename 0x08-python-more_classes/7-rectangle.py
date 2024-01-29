@@ -6,6 +6,7 @@ class Rectangle:
     """A Rectangle"""
     number_of_instances = 0
     print_symbol = '#'
+
     def __init__(self, width=0, height=0):
         """constructor
 
@@ -92,7 +93,7 @@ class Rectangle:
 
         for i in range(len_height):
             for j in range(len_wdith):
-                ans += '#'
+                ans += str(self.print_symbol)
             if i != len_height - 1:
                 ans += '\n'
         return ans
