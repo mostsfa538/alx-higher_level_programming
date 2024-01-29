@@ -6,7 +6,7 @@ class Rectangle:
     """A Rectangle"""
 
     def __init__(self, width=0, height=0):
-        """constructor"""
+        """Constructor for the Rectangle class."""
         
         if type(width) is not int:
             raise TypeError('width must be an integer')
@@ -24,12 +24,12 @@ class Rectangle:
 
     @property
     def width(self):
-        """retrieve width"""
+        """Retrieve width."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """set width"""
+        """Set width."""
         if type(value) is not int:
             raise TypeError('width must be an integer')
         if value < 0:
@@ -38,12 +38,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """retrieve height"""
+        """Retrieve height."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """set height"""
+        """Set height."""
         if type(value) is not int:
             raise TypeError('height must be an integer')
         if value < 0:
