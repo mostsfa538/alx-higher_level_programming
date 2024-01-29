@@ -12,7 +12,7 @@ class Rectangle:
             width (int): the width
             height (int): the height
         """
-        
+
         if type(width) is not int:
             raise TypeError('width must be an integer')
         if width < 0:
