@@ -117,7 +117,7 @@ class Rectangle:
         if type(rect_2) is not Rectangle:
             raise TabError('rect_2 must be an instance of Rectangle')
 
-        if rect_1.area >= rect_2.area:
+        if rect_1.area() >= rect_2.area():
             return rect_1
-
-        return rect_2
+        else:
+            return rect_2
