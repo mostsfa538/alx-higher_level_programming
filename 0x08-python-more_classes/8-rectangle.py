@@ -8,12 +8,7 @@ class Rectangle:
     print_symbol = '#'
 
     def __init__(self, width=0, height=0):
-        """constructor
-
-        Args:
-            width (int): the width
-            height (int): the height
-        """
+        """constructor"""
 
         if type(width) is not int:
             raise TypeError('width must be an integer')
@@ -43,11 +38,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """set width
-
-        Args:
-            value (int): width value
-        """
+        """set width"""
         if type(value) is not int:
             raise TypeError('width must be an integer')
         if value < 0:
@@ -61,11 +52,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """set height
-
-        Args:
-            value (int): height value
-        """
+        """set height"""
         if type(value) is not int:
             raise TypeError('height must be an integer')
         if value < 0:
@@ -117,7 +104,9 @@ class Rectangle:
         if type(rect_2) is not Rectangle:
             raise TabError('rect_2 must be an instance of Rectangle')
 
-        if rect_1.area() >= rect_2.area():
+        a1 = rect_1.area()
+        a2 = rect_2.area()
+        if a1 >= a2:
             return rect_1
         else:
             return rect_2
