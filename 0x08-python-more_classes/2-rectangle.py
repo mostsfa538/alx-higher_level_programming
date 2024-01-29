@@ -6,7 +6,12 @@ class Rectangle:
     """A Rectangle"""
 
     def __init__(self, width=0, height=0):
-        """constructor"""
+        """constructor
+
+        Args:
+            width (int): the width
+            height (int): the height
+        """
         
         if type(width) is not int:
             raise TypeError('width must be an integer')
@@ -29,7 +34,11 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """set width"""
+        """set width
+
+        Args:
+            value (int): width value
+        """
         if type(value) is not int:
             raise TypeError('width must be an integer')
         if value < 0:
@@ -43,7 +52,11 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """set height"""
+        """set height
+
+        Args:
+            value (int): height value
+        """
         if type(value) is not int:
             raise TypeError('height must be an integer')
         if value < 0:
@@ -56,4 +69,6 @@ class Rectangle:
 
     def perimeter(self):
         """Calculate the perimeter"""
+        if self.__width == 0 or self.__height == 0:
+            return 0
         return 2 * (self.__width + self.__height)
