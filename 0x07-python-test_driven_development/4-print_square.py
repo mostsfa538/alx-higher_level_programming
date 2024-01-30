@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""The Frunction"""
+
 
 def print_square(size):
     """Prints square"""
