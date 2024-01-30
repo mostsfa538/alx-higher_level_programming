@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Matrix"""
+
+
 def matrix_divided(matrix, div):
     """matrix division"""
 
@@ -8,12 +10,13 @@ def matrix_divided(matrix, div):
 
     if type(div) is not int:
         raise TypeError('div must be a number')
-    
+
     first_row_length = len(matrix[0])
     for row in matrix[1:]:
         if len(row) != first_row_length:
             raise TypeError('Each row of the matrix must have the same size')
 
+    new_matrix = []
     for row in matrix:
         new_row = []
         for element in row:
