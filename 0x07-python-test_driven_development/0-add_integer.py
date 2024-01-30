@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Adds"""
-def add_integer(a, b=98): 
+
+
+def add_integer(a, b=98):
     """add"""
     if type(a) is not int:
         raise TypeError('a must be an integer')
