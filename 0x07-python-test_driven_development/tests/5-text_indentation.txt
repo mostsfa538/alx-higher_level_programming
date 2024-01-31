@@ -1,11 +1,15 @@
-text_indentation
+==================================
+The ``4-print_square.txt`` module
+==================================
 
-tests:
+Using ``print_square``
+-----------------------
 
-    >>> text_indentation("Hello. World")
-    Hello.
+Import the function:
 
-     World
+    >>> print_square = __import__('4-print_square').print_square
+
+Now test it:
 
     >>> text_indentation()
     Traceback (most recent call last):
