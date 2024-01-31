@@ -1,5 +1,5 @@
-add integer
-    """ function """
+add_integer
+""" function """
 
     >>> add_integer(2, 3)
     5
