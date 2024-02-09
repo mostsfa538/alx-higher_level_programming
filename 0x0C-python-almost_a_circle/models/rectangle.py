@@ -22,6 +22,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Set Private attribute for width"""
+        self.Validate_attributes('width', value)
         self.__width = value
 
     @property
@@ -32,6 +33,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Set Private attribute for height"""
+        self.Validate_attributes('height', value)
         self.__height = value
 
     @property
@@ -42,6 +44,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Set Private attribute for x"""
+        self.Validate_attributes('x', value)
         self.__x = value
 
     @property
@@ -52,4 +55,15 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Set Private attribute for y"""
+        self.Validate_attributes('y', value)
         self.__y = value
+
+    @staticmethod
+    def Validate_attributes(value, name):
+        """Check for Type"""
+        if type(value) is not int:
+            raise TypeError('{} must be an integer'.format(name))
+        if name in ['height', 'width'] and value <= 0:
+            raise ValueError('{} must be > 0'.format(name))
+        if name in ['x', 'y'] and value < 0:
+            raise ValueError('{} must be >= 0'.format(name))
