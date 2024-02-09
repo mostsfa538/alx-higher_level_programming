@@ -59,7 +59,7 @@ class Rectangle(Base):
         self.__y = value
 
     @staticmethod
-    def Validate_attributes(value, name):
+    def Validate_attributes(name, value):
         """Check for Type"""
         if type(value) is not int:
             raise TypeError('{} must be an integer'.format(name))
@@ -67,3 +67,7 @@ class Rectangle(Base):
             raise ValueError('{} must be > 0'.format(name))
         if name in ['x', 'y'] and value < 0:
             raise ValueError('{} must be >= 0'.format(name))
+
+    def area(self):
+        """Return the area"""
+        return self.__width * self.__height
