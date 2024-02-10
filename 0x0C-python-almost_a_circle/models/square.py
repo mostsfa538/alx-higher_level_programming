@@ -24,3 +24,27 @@ class Square(Rectangle):
         """set the size"""
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """update values"""
+        if args is None or len(args) == 0:
+            for key, value in kwargs.items():
+                if hasattr(self, key) is True:
+                    self.__setattr__(key, value)
+        else:
+            try:
+                self.id = args[0]
+                self.size = args[1]
+                self.x = args[2]
+                self.y = args[3]
+            except IndexError:
+                pass
+
+    def to_dictionary(self):
+        """return dictionary"""
+        return {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y
+        }
