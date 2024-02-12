@@ -31,7 +31,7 @@ class Base:
                 f.write("[]")
             else:
                 dict_list = [obj.to_dictionary() for obj in list_objs]
-                f.write(cls.to_json_string(dict_list))
+                f.write(Base.to_json_string(dict_list))
 
     @staticmethod
     def from_json_string(json_string):
@@ -46,10 +46,8 @@ class Base:
         """returns an instance with all attributes already set"""
         if cls.__name__ == 'Rectangle':
             dummy = cls(1, 1)
-        elif cls.__name__ == 'Square':
-            dummy = cls(1)
         else:
-            return None
+            dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
 
