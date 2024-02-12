@@ -1,13 +1,17 @@
 #!/usr/bin/python3
-"""All"""
+"""Here goes everything"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """the class Rectangle that inherits from Base"""
+    """
+    the class Rectangle that inherits from Base
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """constructor"""
+        """
+        constructor
+        """
         self.width = width
         self.height = height
         self.x = x
@@ -16,34 +20,45 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Return Private attribute for width"""
+        """
+        Return Private attribute for width
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Set Private attribute for width"""
+        """
+        Set Private attribute for width
+        """
         self.Validate_attributes('width', value)
         self.__width = value
 
     @property
     def height(self):
-        """Return Private attribute for height"""
+        """
+        Return Private attribute for height
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Set Private attribute for height"""
+        """
+        Set Private attribute for height
+        """
         self.Validate_attributes('height', value)
         self.__height = value
 
     @property
     def x(self):
-        """Return Private attribute for x"""
+        """
+        Return Private attribute for x"""
         return self.__x
 
     @x.setter
     def x(self, value):
-        """Set Private attribute for x"""
+        """
+        Set Private attribute for x
+        """
         self.Validate_attributes('x', value)
         self.__x = value
 
@@ -54,7 +69,9 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        """Set Private attribute for y"""
+        """
+        Set Private attribute for y
+        """
         self.Validate_attributes('y', value)
         self.__y = value
 
@@ -69,23 +86,31 @@ class Rectangle(Base):
             raise ValueError('{} must be >= 0'.format(name))
 
     def area(self):
-        """Return the area"""
+        """
+        Return the area
+        """
         return (self.__width * self.__height)
 
     def display(self):
-        """prints in stdout the Rectangle instance with the character #"""
+        """
+        prints in stdout the Rectangle instance with the character #
+        """
         for _ in range(self.__y):
             print()
             for _ in range(self.__height):
                 print(' ' * self.__x + '#' * self.__width)
 
     def __str__(self):
-        """overriding the __str__ method"""
+        """
+        overriding the __str__ method
+        """
         return f"[Rectangle] ({self.id}) \
 {self.x}/{self.y} - {self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
-        """assigns an argument to each attribute"""
+        """
+        assigns an argument to each attribute
+        """
         if args is None or len(args) == 0:
             for key, value in kwargs.items():
                 self.__setattr__(key, value)
@@ -100,7 +125,9 @@ class Rectangle(Base):
                 pass
 
     def to_dictionary(self):
-        """save data as a dicitionary"""
+        """
+        save data as a dicitionary
+        """
         return {
             'id': self.id,
             'height': self.height,
