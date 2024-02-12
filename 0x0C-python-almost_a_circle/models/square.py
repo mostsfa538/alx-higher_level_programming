@@ -17,7 +17,7 @@ class Square(Rectangle):
     @property
     def size(self):
         """return the size"""
-        return self.size
+        return self.width
 
     @size.setter
     def size(self, value):
@@ -44,7 +44,7 @@ class Square(Rectangle):
         """return dictionary"""
         return {
             'id': self.id,
-            'size': self.size,
+            'size': self.width,
             'x': self.x,
             'y': self.y
         }
