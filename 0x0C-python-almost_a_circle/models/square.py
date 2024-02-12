@@ -1,32 +1,44 @@
 #!/usr/bin/python3
-"""All"""
+"""Here goes everything"""
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Square that inherits from Rectangle"""
+    """
+    Square that inherits from Rectangle
+    """
 
     def __init__(self, size, x=0, y=0, id=None):
-        """Constructor"""
+        """
+        Constructor
+        """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """return string representation of Square instance"""
+        """
+        return string representation of Square instance
+        """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
     @property
     def size(self):
-        """return the size"""
+        """
+        return the size
+        """
         return self.width
 
     @size.setter
     def size(self, value):
-        """set the size"""
+        """
+        set the size
+        """
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
-        """update values"""
+        """
+        update values
+        """
         if args is None or len(args) == 0:
             for key, value in kwargs.items():
                 if hasattr(self, key) is True:
@@ -41,7 +53,9 @@ class Square(Rectangle):
                 pass
 
     def to_dictionary(self):
-        """return dictionary"""
+        """
+        return dictionary
+        """
         return {
             'id': self.id,
             'size': self.width,
