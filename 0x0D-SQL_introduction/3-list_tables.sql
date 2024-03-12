@@ -1,2 +1,2 @@
- -- lists all the tables of a database in your
+-- show the tables of db, the db name will be passed as an argument
 SHOW TABLES;
