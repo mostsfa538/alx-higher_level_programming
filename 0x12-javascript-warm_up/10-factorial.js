@@ -13,5 +13,5 @@ const { argv } = require('process');
 if (argv.length < 3) {
   console.log(1);
 } else {
-  console.log(factorial(argv[2]));
+  console.log(parseInt(factorial(argv[2])));
 }
