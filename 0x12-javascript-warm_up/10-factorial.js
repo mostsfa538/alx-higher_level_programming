@@ -10,8 +10,9 @@ const factorial = (number) => {
 
 const { argv } = require('process');
 
-if (argv.length < 3) {
-  console.log(1);
+const inputNumber = parseInt(argv[2]);
+if (isNaN(inputNumber)) {
+  console.log('1');
 } else {
-  console.log(parseInt(factorial(argv[2])));
+  console.log(factorial(inputNumber));
 }
