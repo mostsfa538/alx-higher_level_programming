@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 function callMeMoby (x, theFunction) {
-  while (x--) {
+  for (let i = 0; i < x; i++) {
     theFunction();
   }
 }
