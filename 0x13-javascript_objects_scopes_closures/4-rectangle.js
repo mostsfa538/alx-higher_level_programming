@@ -20,13 +20,12 @@ class Rectangle {
   }
 
   rotate () {
-    for (let i = 0; i < this.width + this.width; i++) {
-      let rectRotate = '';
-      for (let i = 0; i < this.height + this.height; i++) {
-        rectRotate += 'X';
+    for (let i = 0; i < this.width; i++) {
+      let row = '';
+      for (let j = 0; j < this.height; j++) {
+        row += 'X';
       }
-      console.log(rectRotate);
-    }
+      console.log(row);    }
   }
 
   double () {
