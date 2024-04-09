@@ -20,9 +20,9 @@ class Rectangle {
   }
 
   rotate () {
-    for (let i = 0; i < this.width * 2; i++) {
+    for (let i = 0; i < this.width + this.width; i++) {
       let rectRotate = '';
-      for (let i = 0; i < this.height * 2; i++) {
+      for (let i = 0; i < this.height + this.height; i++) {
         rectRotate += 'X';
       }
       console.log(rectRotate);
