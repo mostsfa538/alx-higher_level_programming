@@ -14,9 +14,8 @@ def cities_by_state(username, password, database):
                          user=username, passwd=password, db=database)
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM cities\
-    join states on cities.id = states.id\
-            ORDER BY cities.id ASC")
+    cursor.execute("SELECT cities.id, cities.name, states.name FROM cities\
+            INNER JOIN states ON states.id=cities.state_id")
     states = cursor.fetchall()
 
     for state in states:
