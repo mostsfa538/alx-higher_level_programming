@@ -16,12 +16,14 @@ def filter_cities(username, password, database, name):
 
     cursor.execute("SELECT cities.name FROM cities\
             INNER JOIN states ON states.id=cities.state_id WHERE states.name\
-            LIKE BINARY '{}' ORDER BY states.id ASC".format(name))
-    states = cursor.fetchall()
+            LIKE BINARY '{}'".format(name))
 
-    for state in states:
-        print(state)
+    cities = cursor.fetchall()
 
+    city_names = [city[0] for city in cities]
+    formatted_cities = ", ".join(city_names)
+
+    print(formatted_cities)
     cursor.close()
     db.close()
 
