@@ -5,14 +5,7 @@ import sys
 
 
 def list_states(username, password, database):
-    """
-        List all states from a database
-
-    Args:
-        username: mysql username
-        password: mysql password
-        database: database name
-    """
+    """List all states from a database"""
 
     db = MySQLdb.connect(
         host="localhost",
@@ -23,7 +16,7 @@ def list_states(username, password, database):
     )
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states ORDER BY states.id ASC limit 5")
+    cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
     states = cursor.fetchall()
 
     for state in states:
