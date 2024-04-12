@@ -15,7 +15,7 @@ def my_filter_states(username, password, database, name):
     cursor = db.cursor()
 
     cursor.execute(
-        "SELECT * FROM states WHERE name = '{}' \
+        "SELECT * FROM states WHERE name LIKE BINARY '{}' \
         ORDER BY states.id ASC".format(name))
     states = cursor.fetchall()
 
