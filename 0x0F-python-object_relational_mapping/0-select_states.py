@@ -17,8 +17,8 @@ def list_states(username, password, database):
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=username,
-        passwd=password,
+        user='root',
+        passwd='mo5t',
         db=database
     )
     cursor = db.cursor()
