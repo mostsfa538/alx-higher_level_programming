@@ -23,7 +23,7 @@ def list_states(username, password, database):
     )
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
+    cursor.execute("SELECT * FROM states ORDER BY states.id ASC limit 5")
     states = cursor.fetchall()
 
     for state in states:
