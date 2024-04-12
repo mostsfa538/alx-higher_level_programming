@@ -1,26 +1,14 @@
 #!/usr/bin/python3
-"""  lists all states from the database hbtn_0e_0_usa """
+"""Here goes every thing"""
 import MySQLdb
 import sys
 
 
 def list_states(username, password, database):
-    """
-        List all states from a database
+    """List all states from a database"""
 
-    Args:
-        username: mysql username
-        password: mysql password
-        database: database name
-    """
-
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=username,
-        passwd=password,
-        db=database
-    )
+    db = MySQLdb.connect(host="localhost", port=3306,
+                         user=username, passwd=password, db=database)
     cursor = db.cursor()
 
     cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
