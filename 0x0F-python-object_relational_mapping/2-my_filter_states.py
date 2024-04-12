@@ -4,7 +4,7 @@ import MySQLdb
 import sys
 
 
-def filter_states(username, password, database, name):
+def my_filter_states(username, password, database, name):
     """
         takes in an argument and displays all values in the states table of
         hbtn_0e_0_usa where name matches the argument
@@ -15,7 +15,8 @@ def filter_states(username, password, database, name):
     cursor = db.cursor()
 
     cursor.execute(
-        "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC", (name,))
+        "SELECT * FROM states WHERE name = {} ORDER BY states.id ASC"
+        .format(name))
     states = cursor.fetchall()
 
     for state in states:
@@ -28,4 +29,4 @@ def filter_states(username, password, database, name):
 if __name__ == '__main__':
     username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
     name = sys.argv[4]
-    filter_states(username, password, database, name)
+    my_filter_states(username, password, database, name)
