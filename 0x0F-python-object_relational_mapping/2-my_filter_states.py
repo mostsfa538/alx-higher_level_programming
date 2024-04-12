@@ -15,8 +15,8 @@ def my_filter_states(username, password, database, name):
     cursor = db.cursor()
 
     cursor.execute(
-        "SELECT * FROM states WHERE name = {} ORDER BY states.id ASC"
-        .format(name))
+        "SELECT * FROM states WHERE name = '{}' \
+        ORDER BY states.id ASC".format(name))
     states = cursor.fetchall()
 
     for state in states:
