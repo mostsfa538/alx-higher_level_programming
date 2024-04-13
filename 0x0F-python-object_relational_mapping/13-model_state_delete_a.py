@@ -16,9 +16,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    delete_state = session.query(State).filter(State.name.like('%a%')).all()
+    delete_states = session.query(State).filter(State.name.like('%a%')).all()
 
-    if delete_state is not None:
+    for delete_state in delete_states:
         session.delete(delete_state)
         session.commit()
 
