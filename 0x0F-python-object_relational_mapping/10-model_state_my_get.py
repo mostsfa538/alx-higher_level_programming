@@ -17,8 +17,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state_id = session.query(State).filter(State.name == name).order_by(
-        State.id).all()
+    state_id = session.query(State).filter(State.name == name).first()
 
     if state_id is not None:
         print('{}'.format(state_id))
