@@ -20,5 +20,6 @@ if __name__ == "__main__":
 
     if update_state is not None:
         update_state.name = 'New Mexico'
+        session.commit()
 
     session.close()
