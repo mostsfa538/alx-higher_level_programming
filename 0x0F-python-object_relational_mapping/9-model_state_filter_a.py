@@ -20,6 +20,6 @@ if __name__ == "__main__":
         State.id).all()
 
     for state in states:
-        print('{} : {}'.format(state.id, state.name))
+        print('{}: {}'.format(state.id, state.name))
 
     session.close()
