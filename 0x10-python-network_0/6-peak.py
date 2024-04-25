@@ -7,13 +7,17 @@ def find_peak(list_of_integers):
         the peak is an element that is
         greater than or equal to its neighboring elements
     """
-    if list_of_integers is None:
+    if len(list_of_integers) == 0:
         return None
 
-    length = len(list_of_integers)
-    for i in range(0, length - 1):
-        if i == 0 and list_of_integers[i] >= list_of_integers[i + 1]:
-            return list_of_integers[i]
-        elif list_of_integers[i - 1] <= list_of_integers[i]\
-                and list_of_integers[i + 1] <= list_of_integers[i]:
-            return list_of_integers[i]
+    left = 0
+    right = len(list_of_integers) - 1
+
+    while left < right:
+        mid = (left + right) // 2
+        if list_of_integers[mid] > list_of_integers[mid + 1]:
+            right = mid
+        else:
+            left = mid + 1
+
+    return list_of_integers[left]
