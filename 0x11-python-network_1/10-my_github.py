@@ -10,6 +10,6 @@ if __name__ == "__main__":
     info = (sys.argv[1], sys.argv[2])
     url = 'https://api.github.com/user'
 
-    r = requests.get(url, info=info)
+    r = requests.get(url, auth=info)
     data = r.json()
     print(data.get('id'))
