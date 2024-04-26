@@ -7,5 +7,4 @@ import urllib.request
 
 with urllib.request.urlopen(sys.argv[1]) as response:
     id = response.getheader('X-Request-Id')
-    if id:
-        print(id)
+    print(id)
