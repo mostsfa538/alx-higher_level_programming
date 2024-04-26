@@ -8,8 +8,8 @@ import requests
 
 if __name__ == "__main__":
     info = (sys.argv[1], sys.argv[2])
-    pasword = url = 'https://api.github.com/user'
+    url = 'https://api.github.com/user'
 
     r = requests.get(url, info=info)
     data = r.json()
-    print("{}".format(data.get('id')))
+    print(data.get('id'))
