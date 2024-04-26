@@ -7,7 +7,7 @@ import requests
 
 
 if __name__ == '__main__':
-    if (len(sys.argv) == 1):
+    if len(sys.argv) == 1:
         q = ""
     else:
         q = sys.argv[1]
@@ -16,7 +16,7 @@ if __name__ == '__main__':
         r = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
         data = r.json()
 
-        if r.json() is None:
+        if not data:
             print('No result')
         else:
             print("[{}] {}".format(data.get('id'), data.get('name')))
