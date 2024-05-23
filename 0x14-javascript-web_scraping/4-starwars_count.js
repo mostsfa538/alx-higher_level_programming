@@ -10,15 +10,9 @@ request(baseUrl, (err, response, body) => {
     console.log(err);
     return;
   }
-  if (response.statusCode === 200) {
-    const films = JSON.parse(body).results;
-    let count = 0;
 
-    films.forEach(film => {
-      if (film.characters.includes(characterUrl)) {
-        count++;
-      }
-    });
-    console.log(count);
-  }
+  const films = JSON.parse(body).results;
+  const count = films.filter(film =>
+    film.characters.includes(characterUrl));
+  console.log(count.length);
 });
