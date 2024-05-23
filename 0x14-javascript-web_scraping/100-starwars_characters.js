@@ -14,8 +14,8 @@ request(url, (err, reponse, body) => {
 
   for (const charLink of chars) {
     request(charLink, (err, response, body) => {
-      if (error) {
-        console.log(error);
+      if (err) {
+        console.log(err);
         return;
       }
       const charName = JSON.parse(body).name;
